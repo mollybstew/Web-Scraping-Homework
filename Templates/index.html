@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mars Facts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div clas="container-fluid">
+        <div class="main_container">
+            <div class="jumbotron text-center">
+                <h1>Mission to Mars</h1>
+                <p>
+                    <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+                <div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                    <div class="content_container">
+                        <h1>Latest Mars News</h1>
+                        <p>{{ mars_collection_values.news_p }}</p>
+                    </div>
+
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+            </div>
+            <div class="row">
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7">
+                    <div class="img_container">
+                        <h1>Featured Mars Image</h1>
+                        <img id="img_format" src={{ mars_collection_values.featured_image_url }} alt="Feature Image URL" width="80%">
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3>Current Weather on Mars</h3>
+                            <p>{{ mars_collection_values.mars_weather }}</p>
+                        </div>
+                        <div class="col-12">
+                            <h3>Mars Facts</h3>
+                            {{mars_collection_values.mars_facts | safe }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
